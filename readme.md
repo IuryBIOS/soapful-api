@@ -4,6 +4,17 @@
 [Referencia REST usada](https://spring.io/guides/gs/rest-service/)  
 [.wsl (apenas com o projeto rodando)](http://localhost:8080/ws/pessoa.wsdl)
 
+## Setup
+- Maven: 3.8.4    
+- Java: 17  
+- Spring Boot: 2.6.6
+
+### Dependencies
+- Spring Web - spring initializr
+- Spring Web Services - spring initializr
+- wsdl4j - maven repository
+- jackson-dataformat-xml - maven repository
+
 ## XSD
 
 É preciso criar um xsd que determina o schema que a api SOAP irá seguir. O 
