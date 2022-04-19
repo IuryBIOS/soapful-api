@@ -4,7 +4,6 @@
     <xs:element name="pessoaRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="codPessoa" type="xs:int"/>
                 <xs:element name="nomPessoa" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
@@ -20,6 +19,7 @@
     <xs:element name="checarPessoaRequest">
         <xs:complexType>
             <xs:sequence>
+                <xs:element name="codPessoa" type="xs:int"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

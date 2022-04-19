@@ -7,6 +7,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import io.spring.guides.gs_producing_web_service.AtualizarPessoaRequest;
 import io.spring.guides.gs_producing_web_service.AtualizarPessoaResponse;
+import io.spring.guides.gs_producing_web_service.ChecarPessoaRequest;
 import io.spring.guides.gs_producing_web_service.ChecarPessoaResponse;
 import io.spring.guides.gs_producing_web_service.Pessoa;
 import io.spring.guides.gs_producing_web_service.PessoaRequest;
@@ -19,15 +20,15 @@ public class PessoaEndpoint {
  @ResponsePayload
  public PessoaResponse pessoaRequest(@RequestPayload PessoaRequest request){
   PessoaResponse response=new PessoaResponse();
-  Pessoa pessoa=PessoaRepository.criarPessoa(request.getCodPessoa(),request.getNomPessoa());
+  Pessoa pessoa=PessoaRepository.criarPessoa(request.getNomPessoa());
   response.setPessoa(pessoa);
   return response;
  }
  @PayloadRoot(namespace=NAMESPACE_URI,localPart="checarPessoaRequest")
  @ResponsePayload
- public ChecarPessoaResponse checarPessoaRequest(){
+ public ChecarPessoaResponse checarPessoaRequest(@RequestPayload ChecarPessoaRequest request){
   ChecarPessoaResponse response=new ChecarPessoaResponse();
-  Pessoa pessoa=PessoaRepository.checarPessoa();
+  Pessoa pessoa=PessoaRepository.checarPessoa(request.getCodPessoa());
   response.setPessoa(pessoa);
   return response;
  }

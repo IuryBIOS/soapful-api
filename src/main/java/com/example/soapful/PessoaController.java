@@ -12,13 +12,13 @@ import io.spring.guides.gs_producing_web_service.Pessoa;
 @RestController
 public class PessoaController {
  @GetMapping("/pessoa")
- public Pessoa pessoa(@RequestParam(value="codPessoa") int codPessoa,@RequestParam(value="nomPessoa") String nomPessoa){
-  Pessoa pessoa=PessoaRepository.criarPessoa(codPessoa,nomPessoa);
+ public Pessoa pessoa(@RequestParam(value="nomPessoa") String nomPessoa){
+  Pessoa pessoa=PessoaRepository.criarPessoa(nomPessoa);
   return pessoa;
  }
  @GetMapping("/checaPessoa")
- public Pessoa checkPessoa(){
-  Pessoa pessoa=PessoaRepository.checarPessoa();
+ public Pessoa checkPessoa(@RequestParam(value="codPessoa") int codPessoa){
+  Pessoa pessoa=PessoaRepository.checarPessoa(codPessoa);
   return pessoa;
  }
  @RequestMapping(
@@ -33,16 +33,16 @@ public class PessoaController {
    path="/pessoaXML",
    method=RequestMethod.GET, 
    produces={MediaType.APPLICATION_XML_VALUE})
- public Pessoa pessoaXML(@RequestParam(value="codPessoa") int codPessoa,@RequestParam(value="nomPessoa") String nomPessoa){
-  Pessoa pessoa=PessoaRepository.criarPessoa(codPessoa,nomPessoa);
+ public Pessoa pessoaXML(@RequestParam(value="nomPessoa") String nomPessoa){
+  Pessoa pessoa=PessoaRepository.criarPessoa(nomPessoa);
   return pessoa;
  }
  @RequestMapping(
    path="/checaPessoaXML",
    method=RequestMethod.GET, 
    produces={MediaType.APPLICATION_XML_VALUE})
- public Pessoa checkPessoaXML(){
-  Pessoa pessoa=PessoaRepository.checarPessoa();
+ public Pessoa checkPessoaXML(@RequestParam(value="codPessoa") int codPessoa){
+  Pessoa pessoa=PessoaRepository.checarPessoa(codPessoa);
   return pessoa;
  }
  @RequestMapping(path="/atualizarPessoaXML",method=RequestMethod.GET, produces={MediaType.APPLICATION_XML_VALUE})
