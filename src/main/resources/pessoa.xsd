@@ -1,0 +1,55 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+    <!-- Criar uma pessoa nova -->
+    <xs:element name="pessoaRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="codPessoa" type="xs:int"/>
+                <xs:element name="nomPessoa" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="pessoaResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="pessoa" type="tns:pessoa"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- Bsucar a pessoa que foi criada -->
+    <xs:element name="checarPessoaRequest">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="checarPessoaResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="pessoa" type="tns:pessoa"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- Atualizar a pessoa que foi criada -->
+    <xs:element name="atualizarPessoaRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="codPessoa" type="xs:int"/>
+                <xs:element name="nomPessoa" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="atualizarPessoaResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="pessoa" type="tns:pessoa"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="pessoa">
+        <xs:sequence>
+            <xs:element name="codPessoa" type="xs:int"/>
+            <xs:element name="nomPessoa" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
