@@ -26,7 +26,6 @@ public class PessoaRepository {
  public static Pessoa atualizarPessoa(int codPessoa,String nomPessoa){
   Pessoa response=new Pessoa();
   for (int i=0;i<pessoas.size();i++) {
-   System.out.println("teste");
    if(pessoas.get(i).getCodPessoa()==codPessoa){
     Pessoa pessoaAtualizada=new Pessoa();
     pessoaAtualizada.setCodPessoa(codPessoa);
