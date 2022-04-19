@@ -1,6 +1,8 @@
+## Links
 [Documentação Postman](https://documenter.getpostman.com/view/904945/Uyr7JJji)  
-[Referencia SOAP](https://spring.io/guides/gs/producing-web-service/)  
-[Referencia REST](https://spring.io/guides/gs/rest-service/)  
+[Referencia SOAP usada](https://spring.io/guides/gs/producing-web-service/)  
+[Referencia REST usada](https://spring.io/guides/gs/rest-service/)  
+[.wsl (apenas com o projeto rodando)](http://localhost:8080/ws/pessoa.wsdl)
 
 ## XSD
 
@@ -48,6 +50,12 @@ public XsdSchema pessoaSchema(){
  return new SimpleXsdSchema(new ClassPathResource("pessoa.xsd"));
 }
 ```
+
+## PessoaRepository
+
+Essa classe foi adicionada apenas para servir de container para as pessoas, dessa forma
+tanto o REST quanto o SOAP poderiam visualizar e alterar as informações contidas e assim
+exemplificando a funcionalidade paralela das duas API em um unico WS.
 
 ## Considerações finais
 
